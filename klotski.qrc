@@ -1,0 +1,51 @@
+<RCC>
+    <qresource prefix="/Klotski"/>
+    <qresource prefix="/Hrd">
+        <file>png/hrd_Caocao.png</file>
+        <file>png/hrd_Guanyu.png</file>
+        <file>png/hrd_Huangzhong.png</file>
+        <file>png/hrd_Machao.png</file>
+        <file>png/hrd_Zhangfei.png</file>
+        <file>png/hrd_Zhaoyun.png</file>
+        <file>png/hrd_Zu.png</file>
+    </qresource>
+    <qresource prefix="/Shogi">
+        <file>png/shogi_osho.png</file>
+        <file>png/shogi_hisha.png</file>
+        <file>png/shogi_kakugyo.png</file>
+        <file>png/shogi_kinsho.png</file>
+        <file>png/shogi_ginsho.png</file>
+        <file>png/shogi_keima.png</file>
+        <file>png/shogi_kyosha.png</file>
+        <file>png/shogi_fuhyo.png</file>
+    </qresource>
+    <qresource prefix="/Donald">
+        <file>png/donald_donald.png</file>
+        <file>png/donald_goofy01.png</file>
+        <file>png/donald_goofy02.png</file>
+        <file>png/donald_mickey01.png</file>
+        <file>png/donald_mickey02.png</file>
+        <file>png/donald_pluto.png</file>
+    </qresource>
+    <qresource prefix="/NcBlocks">
+        <file>png/block_1.png</file>
+        <file>png/block_1s.png</file>
+        <file>png/block_2.png</file>
+        <file>png/block_2s.png</file>
+        <file>png/block_3.png</file>
+        <file>png/block_4.png</file>
+        <file>png/block_4s.png</file>
+        <file>png/block_4v.png</file>
+        <file>png/block_5.png</file>
+        <file>png/block_5s.png</file>
+        <file>png/block_6.png</file>
+        <file>png/block_6v.png</file>
+        <file>png/block_7.png</file>
+        <file>png/block_7s.png</file>
+        <file>png/block_8.png</file>
+        <file>png/block_9.png</file>
+        <file>png/block_10.png</file>
+        <file>png/block_a.png</file>
+        <file>png/block_b.png</file>
+    </qresource>
+</RCC>
