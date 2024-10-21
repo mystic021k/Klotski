@@ -362,12 +362,24 @@
     </property>
     <addaction name="action_restart"/>
    </widget>
+   <widget class="QMenu" name="menu_help">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_descriptions"/>
+   </widget>
    <addaction name="menu_game"/>
    <addaction name="menu_layout"/>
+   <addaction name="menu_help"/>
   </widget>
   <action name="action_restart">
    <property name="text">
     <string>重新开始</string>
+   </property>
+  </action>
+  <action name="action_descriptions">
+   <property name="text">
+    <string>游戏说明</string>
    </property>
   </action>
  </widget>

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "klotski.h"
+#include "qgamehelpdlg.h"
 #include "gameboards.h"
 
 Klotski::Klotski(QWidget* parent)
@@ -35,7 +36,6 @@ Klotski::Klotski(QWidget* parent)
 	for (int b = 0; b < GameBoards.size(); b++)
 	{
 		QAction* action = ui.menu_layout->addAction(GameBoards.value(b).getName());
-		action->setToolTip(GameBoards.value(b).getDescription());
 		action->setCheckable(true);
 		if (b == selectedBoard)
 		{
@@ -46,6 +46,7 @@ Klotski::Klotski(QWidget* parent)
 	}
 	connect(bdActGroup, SIGNAL(triggered(QAction*)), this, SLOT(ChangeGame(QAction*)));
 	connect(ui.action_restart, SIGNAL(triggered()), this, SLOT(RestartSameGame()));
+	connect(ui.action_descriptions, SIGNAL(triggered()), this, SLOT(ShowHelp()));
 	RestartGame();
 }
 
@@ -282,6 +283,12 @@ void Klotski::ChangeGame(QAction* action)
 			break;
 		}
 	}
+}
+
+void Klotski::ShowHelp()
+{
+	QGameHelpDlg dlg;
+	dlg.exec();
 }
 
 void Klotski::PressBlock(int blockId)

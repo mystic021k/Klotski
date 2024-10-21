@@ -64,6 +64,9 @@
     <ClCompile Include="qblockview.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="qgamehelpdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="klotskiEngine.h">
@@ -83,5 +86,13 @@
     <QtMoc Include="qblockview.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="qgamehelpdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="gamehelp.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

@@ -48,4 +48,15 @@
         <file>png/block_a.png</file>
         <file>png/block_b.png</file>
     </qresource>
+    <qresource prefix="/Pennant">
+        <file>png/pennant_boston1.png</file>
+        <file>png/pennant_boston2.png</file>
+        <file>png/pennant_brooklyn.png</file>
+        <file>png/pennant_chicago.png</file>
+        <file>png/pennant_cincinnati.png</file>
+        <file>png/pennant_newyork.png</file>
+        <file>png/pennant_philadelphia.png</file>
+        <file>png/pennant_pittsburgh.png</file>
+        <file>png/pennant_stlouis.png</file>
+    </qresource>
 </RCC>

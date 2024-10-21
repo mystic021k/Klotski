@@ -36,4 +36,5 @@ public slots:
     void PressBlock(int blockId);
     void RestartSameGame();
     void ChangeGame(QAction* action);
+    void ShowHelp();
 };
