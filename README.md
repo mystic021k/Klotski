@@ -1,7 +1,2 @@
-# 华容道
-
-#### 介绍
-用Qt编写的华容道游戏
-
-#### 软件架构
-软件架构说明
+# Klotski
+A klotski game based on Qt.
