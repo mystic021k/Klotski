@@ -5,8 +5,8 @@ KlotskiBoard::KlotskiBoard()
 {
 }
 
-KlotskiBoard::KlotskiBoard(const QList<KlotskiBlock>& boardBlocks, const QList<kBlank>& boardBlanks, const QString& name, const QString& description, int width, int height)
-	: boardBlocks(boardBlocks), boardBlanks(boardBlanks), name(name), description(description), width(width), height(height)
+KlotskiBoard::KlotskiBoard(const QList<KlotskiBlock>& boardBlocks, const QList<kBlank>& boardBlanks, const QString& name, const QString& description, const QString& filename, int width, int height)
+	: boardBlocks(boardBlocks), boardBlanks(boardBlanks), name(name), description(description), filename(filename), width(width), height(height)
 {
 }
 
@@ -48,6 +48,16 @@ void KlotskiBoard::setDescription(QString description)
 QString KlotskiBoard::getDescription()
 {
 	return this->description;
+}
+
+void KlotskiBoard::setFilename(QString fname)
+{
+	this->filename = fname;
+}
+
+QString KlotskiBoard::getFilename()
+{
+	return this->filename;
 }
 
 void KlotskiBoard::setWidth(int width)

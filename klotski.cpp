@@ -47,6 +47,7 @@ Klotski::Klotski(QWidget* parent)
 	connect(bdActGroup, SIGNAL(triggered(QAction*)), this, SLOT(ChangeGame(QAction*)));
 	connect(ui.action_restart, SIGNAL(triggered()), this, SLOT(RestartSameGame()));
 	connect(ui.action_descriptions, SIGNAL(triggered()), this, SLOT(ShowHelp()));
+	connect(ui.action_about, SIGNAL(triggered()), this, SLOT(ShowAbout()));
 	RestartGame();
 }
 
@@ -64,15 +65,11 @@ void Klotski::mousePressEvent(QMouseEvent* event)
 	{
 		return;
 	}
-	int windowHeight = this->geometry().height() - 40;
-	int windowWidth = this->geometry().width();
-	int blockSize = (windowHeight - 20) / GameBoards.value(selectedBoard).getHeight() - (windowHeight - 20) / GameBoards.value(selectedBoard).getHeight() % 10;
-	int leftStart = (windowWidth - blockSize * GameBoards.value(selectedBoard).getWidth()) / 2;
 	int topStart = 30;
 	QPoint startPos = QPoint(leftStart, topStart);
 	QPoint clickPos = event->pos() - startPos;
 	QPoint clickSpace = QPoint((clickPos.x() / blockSize), (clickPos.y() / blockSize));
-	if (clickSpace.x() >= 0 && clickSpace.y() >= 0 && clickSpace.x() < GameBoards.value(selectedBoard).getWidth() && clickSpace.y() < GameBoards.value(selectedBoard).getHeight())
+	if (clickPos.x() >= 0 && clickPos.y() >= 0 && clickSpace.x() < GameBoards.value(selectedBoard).getWidth() && clickSpace.y() < GameBoards.value(selectedBoard).getHeight())
 	{
 		int blockId = -1;
 		bool hasPressed = false;
@@ -110,6 +107,7 @@ void Klotski::mousePressEvent(QMouseEvent* event)
 					if (moveSuccess)
 					{
 						AddStep(blockId);
+						RecordStepDirection("DOWN");
 						moveSucceed = true;
 					}
 				}
@@ -127,6 +125,7 @@ void Klotski::mousePressEvent(QMouseEvent* event)
 					if (moveSuccess)
 					{
 						AddStep(blockId);
+						RecordStepDirection("UP");
 						moveSucceed = true;
 					}
 				}
@@ -147,6 +146,7 @@ void Klotski::mousePressEvent(QMouseEvent* event)
 					if (moveSuccess)
 					{
 						AddStep(blockId);
+						RecordStepDirection("RIGHT");
 						moveSucceed = true;
 					}
 				}
@@ -164,6 +164,7 @@ void Klotski::mousePressEvent(QMouseEvent* event)
 					if (moveSuccess)
 					{
 						AddStep(blockId);
+						RecordStepDirection("LEFT");
 						moveSucceed = true;
 					}
 				}
@@ -184,6 +185,13 @@ void Klotski::RestartGame()
 	moveSteps = 0;
 	moveingBlock = -1;
 	isSucceeded = false;
+	recordingSteps = ui.action_record->isChecked();
+	if (recordingSteps)
+	{
+		QDateTime nowTime = QDateTime::currentDateTime();
+		QString filename = GameBoards.value(selectedBoard).getFilename() + "_" + nowTime.toString("yyyyMMddhhmmsszzz") + ".log";
+		stepLogFile = new QFile(filename);
+	}
 	for (int g = 0; g < BLOCK_COUNT; g++)
 	{
 		gvBoards[g]->setPressed(false);
@@ -194,8 +202,10 @@ void Klotski::PaintBoard()
 {
 	int windowHeight = this->geometry().height() - 40;
 	int windowWidth = this->geometry().width();
-	int blockSize = (windowHeight - 20) / GameBoards.value(selectedBoard).getHeight() - (windowHeight - 20) / GameBoards.value(selectedBoard).getHeight() % 10;
-	int leftStart = (windowWidth - blockSize * GameBoards.value(selectedBoard).getWidth()) / 2;
+	int blockSizeH = (windowHeight - 20) / GameBoards.value(selectedBoard).getHeight() - (windowHeight - 20) / GameBoards.value(selectedBoard).getHeight() % 10;
+	int blockSizeW = (windowWidth) / GameBoards.value(selectedBoard).getWidth() - (windowWidth) / GameBoards.value(selectedBoard).getWidth() % 10;
+	blockSize = blockSizeH <= blockSizeW ? blockSizeH : blockSizeW;
+	leftStart = (windowWidth - blockSize * GameBoards.value(selectedBoard).getWidth()) / 2;
 	int topStart = 10;
 	for (int g = 0; g < BLOCK_COUNT; g++)
 	{
@@ -237,6 +247,30 @@ void Klotski::AddStep(int blockId)
 		moveSteps++;
 		moveingBlock = blockId;
 		ui.statusBar->showMessage(QString::fromLocal8Bit("步数：")+QString("%1").arg(moveSteps));
+		if (recordingSteps)
+		{
+			if (!stepLogFile->open(QIODevice::WriteOnly | QIODevice::Append))
+			{
+				return;
+			}
+			QTextStream out(stepLogFile);
+			out << "Step " << moveSteps << ": " << engine->getBlock(blockId).getName() << "\n";
+			stepLogFile->close();
+		}
+	}
+}
+
+void Klotski::RecordStepDirection(const QString& direcionText)
+{
+	if (recordingSteps)
+	{
+		if (!stepLogFile->open(QIODevice::WriteOnly | QIODevice::Append))
+		{
+			return;
+		}
+		QTextStream out(stepLogFile);
+		out << direcionText << "\n";
+		stepLogFile->close();
 	}
 }
 
@@ -256,7 +290,10 @@ void Klotski::CheckSuccess()
 	}
 	if (succeed > 0 && successable == succeed)
 	{
-		QMessageBox::information(this, QString::fromLocal8Bit("推盘解谜"), QString::fromLocal8Bit("解谜成功！用了") + QString("%1").arg(moveSteps) + QString::fromLocal8Bit("步。"));
+		QMessageBox msgBox;
+		msgBox.setWindowTitle(QString::fromLocal8Bit("推盘解谜"));
+		msgBox.setText(QString::fromLocal8Bit("解谜成功！用了") + QString("%1").arg(moveSteps) + QString::fromLocal8Bit("步。"));
+		msgBox.exec();
 		isSucceeded = true;
 	}
 }
@@ -289,6 +326,11 @@ void Klotski::ShowHelp()
 {
 	QGameHelpDlg dlg;
 	dlg.exec();
+}
+
+void Klotski::ShowAbout()
+{
+	QMessageBox::about(this, QString(), "Version 1.2\n2024.10.22");
 }
 
 void Klotski::PressBlock(int blockId)

@@ -9,11 +9,12 @@ private:
 	QList<kBlank> boardBlanks;
 	QString name;
 	QString description;
+	QString filename;
 	int width;
 	int height;
 public:
 	KlotskiBoard();
-	KlotskiBoard(const QList<KlotskiBlock>& boardBlocks, const QList<kBlank>& boardBlanks, const QString& name, const QString& description, int width, int height);
+	KlotskiBoard(const QList<KlotskiBlock>& boardBlocks, const QList<kBlank>& boardBlanks, const QString& name, const QString& description, const QString& filename, int width, int height);
 	void setBoardBlocks(QList<KlotskiBlock> blocks);
 	QList<KlotskiBlock> getBoardBlocks();
 	void setBoardBlanks(QList<kBlank> blanks);
@@ -22,6 +23,8 @@ public:
 	QString getName();
 	void setDescription(QString description);
 	QString getDescription();
+	void setFilename(QString fname);
+	QString getFilename();
 	void setWidth(int width);
 	int getWidth();
 	void setHeight(int height);

@@ -5,8 +5,8 @@ KlotskiBlock::KlotskiBlock()
 {
 }
 
-KlotskiBlock::KlotskiBlock(int width, int height, int x, int y, int goalX, int goalY, const QString& backgroundImage)
-	: width(width), height(height), x(x), y(y), goalX(goalX), goalY(goalY), backgroundImage(backgroundImage)
+KlotskiBlock::KlotskiBlock(int width, int height, int x, int y, int goalX, int goalY, const QString& backgroundImage, const QString& name)
+	: width(width), height(height), x(x), y(y), goalX(goalX), goalY(goalY), backgroundImage(backgroundImage), name(name)
 {
 }
 
@@ -78,4 +78,14 @@ void KlotskiBlock::setBackgroundImage(QString imgPath)
 QString KlotskiBlock::getBackgroundImage()
 {
 	return this->backgroundImage;
+}
+
+void KlotskiBlock::setName(QString name)
+{
+	this->name = name;
+}
+
+QString KlotskiBlock::getName()
+{
+	return this->name;
 }

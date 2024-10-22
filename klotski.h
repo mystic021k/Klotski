@@ -21,20 +21,26 @@ private:
     int selectedBoard = 0;
     int moveSteps = 0;
     int moveingBlock = -1;
+    int blockSize = 0;
+    int leftStart = 0;
     bool isSucceeded = false;
+    bool recordingSteps = false;
     KlotskiEngine* engine;
     QBlockView* gvBoards[BLOCK_COUNT];
     QAction* bdActions[BOARD_COUNT];
     QActionGroup* bdActGroup;
+    QFile* stepLogFile;
     void resizeEvent(QResizeEvent* event);
     void mousePressEvent(QMouseEvent* event);
     void RestartGame();
     void PaintBoard();
     void AddStep(int blockId);
+    void RecordStepDirection(const QString& direcionText);
     void CheckSuccess();
 public slots:
     void PressBlock(int blockId);
     void RestartSameGame();
     void ChangeGame(QAction* action);
     void ShowHelp();
+    void ShowAbout();
 };

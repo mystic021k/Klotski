@@ -9,9 +9,10 @@ private:
 	int goalX;
 	int goalY;
 	QString backgroundImage;
+	QString name;
 public:
 	KlotskiBlock();
-	KlotskiBlock(int width, int height, int x, int y, int goalX, int goalY, const QString& backgroundImage);
+	KlotskiBlock(int width, int height, int x, int y, int goalX, int goalY, const QString& backgroundImage, const QString& name);
 	void setWidth(int width);
 	int getWidth();
 	void setHeight(int height);
@@ -26,6 +27,8 @@ public:
 	int getGoalY();
 	void setBackgroundImage(QString imgPath);
 	QString getBackgroundImage();
+	void setName(QString name);
+	QString getName();
 };
 
 struct kBlank
