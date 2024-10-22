@@ -48,6 +48,7 @@ Klotski::Klotski(QWidget* parent)
 	connect(ui.action_restart, SIGNAL(triggered()), this, SLOT(RestartSameGame()));
 	connect(ui.action_descriptions, SIGNAL(triggered()), this, SLOT(ShowHelp()));
 	connect(ui.action_about, SIGNAL(triggered()), this, SLOT(ShowAbout()));
+	connect(ui.action_exit, SIGNAL(triggered()), this, SLOT(Exit()));
 	RestartGame();
 }
 
@@ -331,6 +332,11 @@ void Klotski::ShowHelp()
 void Klotski::ShowAbout()
 {
 	QMessageBox::about(this, QString(), "Version 1.2\n2024.10.22");
+}
+
+void Klotski::Exit()
+{
+	close();
 }
 
 void Klotski::PressBlock(int blockId)

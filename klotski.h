@@ -43,4 +43,5 @@ public slots:
     void ChangeGame(QAction* action);
     void ShowHelp();
     void ShowAbout();
+    void Exit();
 };
