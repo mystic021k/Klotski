@@ -255,7 +255,7 @@ void Klotski::AddStep(int blockId)
 				return;
 			}
 			QTextStream out(stepLogFile);
-			out << "Step " << moveSteps << ": " << engine->getBlock(blockId).getName() << "\n";
+			out << "Step " << moveSteps << ": " << engine->getBlock(blockId).getName() << "\r\n";
 			stepLogFile->close();
 		}
 	}
@@ -270,7 +270,7 @@ void Klotski::RecordStepDirection(const QString& direcionText)
 			return;
 		}
 		QTextStream out(stepLogFile);
-		out << direcionText << "\n";
+		out << direcionText << "\r\n";
 		stepLogFile->close();
 	}
 }
@@ -331,7 +331,7 @@ void Klotski::ShowHelp()
 
 void Klotski::ShowAbout()
 {
-	QMessageBox::about(this, QString(), "Version 1.2\n2024.10.22");
+	QMessageBox::about(this, QString(), "Version 1.2\r\n2024.10.22");
 }
 
 void Klotski::Exit()
