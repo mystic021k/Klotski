@@ -36,7 +36,7 @@ const QList<kBlank> ShogiBlanks = {
 	{1, 4},
 	{2, 4}
 };
-const KlotskiBoard ShogiBoard = KlotskiBoard(ShogiBlocks, ShogiBlanks, QString::fromUtf8("将棋"), QString::fromUtf8("在日本主要有两种外观的版本：箱种女孩和将棋，因为前者的模式跟“华容道”一样，我在此选的是后者。将棋棋子样式的外观。目标是把“王将”也就是最大的一块移到底部中间。"), "Shogi", 4, 5);
+const KlotskiBoard ShogiBoard = KlotskiBoard(ShogiBlocks, ShogiBlanks, QString::fromUtf8("将棋"), QString::fromUtf8("在日本主要有两种外观的版本：箱中女孩和将棋，因为前者的模式跟“华容道”一样，我在此选的是后者。将棋棋子样式的外观。目标是把“王将”也就是最大的一块移到底部中间。"), "Shogi", 4, 5);
 
 const QList<KlotskiBlock> DonaldBlocks = {
 	KlotskiBlock(2, 2, 1, 0, 1, 3, ":/Donald/png/donald_donald.png", "Donald"),
