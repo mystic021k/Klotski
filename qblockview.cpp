@@ -26,6 +26,7 @@ void QBlockView::setBlockId(int id)
 	this->blockId = id;
 }
 
-void QBlockView::mousePressEvent(QMouseEvent* event) {
+void QBlockView::mousePressEvent(QMouseEvent* event)
+{
 	emit press_block(this->blockId);
 }
