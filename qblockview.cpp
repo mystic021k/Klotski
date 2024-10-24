@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "qblockview.h"
-#include "klotski.h"
 
 QBlockView::QBlockView(QWidget* parent)
 	: QGraphicsView(parent)

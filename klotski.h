@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <QFile>
 #include "ui_klotski.h"
-#include "klotskiBoard.h"
 #include "klotskiEngine.h"
 #include "qblockview.h"
 #define BLOCK_COUNT 20

@@ -17,7 +17,7 @@ const QList<kBlank> HrdBlanks = {
 	{1, 4},
 	{2, 4}
 };
-const KlotskiBoard HrdBoard = KlotskiBoard(HrdBlocks, HrdBlanks, QString::fromLocal8Bit("»ªÈİµÀ"), QString::fromLocal8Bit("×îÔç¼ÇÔØÓÚÎ÷±±¹¤Òµ´óÑ§½ÌÊÚ½ª³¤Ó¢ÔÚ1949Äê³ö°æµÄ¡¶¿ÆÑ§ÏûÇ²¡·£¬´óÖÂÍÆ²â³ö¸Ã°æ±¾µÄÑùÊ½×îÔçÊ¼ÓÚÃñ¹ú¡£´´ÒâÀ´Ô´ÓÚ¡¶Èı¹úÑİÒå¡·ÖĞ¡°²Ü²Ù°Ü×ß»ªÈİµÀ¡±µÄÇé¾°£¬ËùÒÔÓÎÏ·µÄÄ¿±ê¾ÍÊÇÈÃ²Ü²Ù´Ó»ªÈİµÀÌÓ×ß£¬ÌåÏÖÔÚÆåÅÌÉÏµÄ¾ÍÊÇ°Ñ×î´óµÄÒ»¿éÒÆµ½µ×²¿ÖĞ¼ä¡£¶øÔÚ´ËÒª°Ñ¡°²Ü²Ù¡±Õâ¸öÆå×ÓÒÆ¶¯µ½³ö¿Ú´¦£¬ÕæµÃ¿¿¡°¹ØÓğ¡±Õâ¸öÆå×ÓÈÃÂ·£¬ºÍ¡¶Èı¹úÑİÒå¡·ÖĞµÄ¹ÊÊÂºÜÌùºÏ¡£"), "HRD", 4, 5);
+const KlotskiBoard HrdBoard = KlotskiBoard(HrdBlocks, HrdBlanks, QString::fromUtf8("åå®¹é“"), QString::fromUtf8("æœ€æ—©è®°è½½äºè¥¿åŒ—å·¥ä¸šå¤§å­¦æ•™æˆå§œé•¿è‹±åœ¨1949å¹´å‡ºç‰ˆçš„ã€Šç§‘å­¦æ¶ˆé£ã€‹ï¼Œå¤§è‡´æ¨æµ‹å‡ºè¯¥ç‰ˆæœ¬çš„æ ·å¼æœ€æ—©å§‹äºæ°‘å›½ã€‚åˆ›æ„æ¥æºäºã€Šä¸‰å›½æ¼”ä¹‰ã€‹ä¸­â€œæ›¹æ“è´¥èµ°åå®¹é“â€çš„æƒ…æ™¯ï¼Œæ‰€ä»¥æ¸¸æˆçš„ç›®æ ‡å°±æ˜¯è®©æ›¹æ“ä»åå®¹é“é€ƒèµ°ï¼Œä½“ç°åœ¨æ£‹ç›˜ä¸Šçš„å°±æ˜¯æŠŠæœ€å¤§çš„ä¸€å—ç§»åˆ°åº•éƒ¨ä¸­é—´ã€‚è€Œåœ¨æ­¤è¦æŠŠâ€œæ›¹æ“â€è¿™ä¸ªæ£‹å­ç§»åŠ¨åˆ°å‡ºå£å¤„ï¼ŒçœŸå¾—é â€œå…³ç¾½â€è¿™ä¸ªæ£‹å­è®©è·¯ï¼Œå’Œã€Šä¸‰å›½æ¼”ä¹‰ã€‹ä¸­çš„æ•…äº‹å¾ˆè´´åˆã€‚"), "HRD", 4, 5);
 
 const QList<KlotskiBlock> ShogiBlocks = {
 	KlotskiBlock(2, 2, 1, 0, 1, 3, ":/Shogi/png/shogi_osho.png", "Osho"),
@@ -36,7 +36,7 @@ const QList<kBlank> ShogiBlanks = {
 	{1, 4},
 	{2, 4}
 };
-const KlotskiBoard ShogiBoard = KlotskiBoard(ShogiBlocks, ShogiBlanks, QString::fromLocal8Bit("½«Æå"), QString::fromLocal8Bit("ÔÚÈÕ±¾Ö÷ÒªÓĞÁ½ÖÖÍâ¹ÛµÄ°æ±¾£ºÏäÖÖÅ®º¢ºÍ½«Æå£¬ÒòÎªÇ°ÕßµÄÄ£Ê½¸ú¡°»ªÈİµÀ¡±Ò»Ñù£¬ÎÒÔÚ´ËÑ¡µÄÊÇºóÕß¡£½«ÆåÆå×ÓÑùÊ½µÄÍâ¹Û¡£Ä¿±êÊÇ°Ñ¡°Íõ½«¡±Ò²¾ÍÊÇ×î´óµÄÒ»¿éÒÆµ½µ×²¿ÖĞ¼ä¡£"), "Shogi", 4, 5);
+const KlotskiBoard ShogiBoard = KlotskiBoard(ShogiBlocks, ShogiBlanks, QString::fromUtf8("å°†æ£‹"), QString::fromUtf8("åœ¨æ—¥æœ¬ä¸»è¦æœ‰ä¸¤ç§å¤–è§‚çš„ç‰ˆæœ¬ï¼šç®±ç§å¥³å­©å’Œå°†æ£‹ï¼Œå› ä¸ºå‰è€…çš„æ¨¡å¼è·Ÿâ€œåå®¹é“â€ä¸€æ ·ï¼Œæˆ‘åœ¨æ­¤é€‰çš„æ˜¯åè€…ã€‚å°†æ£‹æ£‹å­æ ·å¼çš„å¤–è§‚ã€‚ç›®æ ‡æ˜¯æŠŠâ€œç‹å°†â€ä¹Ÿå°±æ˜¯æœ€å¤§çš„ä¸€å—ç§»åˆ°åº•éƒ¨ä¸­é—´ã€‚"), "Shogi", 4, 5);
 
 const QList<KlotskiBlock> DonaldBlocks = {
 	KlotskiBlock(2, 2, 1, 0, 1, 3, ":/Donald/png/donald_donald.png", "Donald"),
@@ -54,7 +54,7 @@ const QList<kBlank> DonaldBlanks = {
 	{1, 3},
 	{2, 3}
 };
-const KlotskiBoard DonaldBoard = KlotskiBoard(DonaldBlocks, DonaldBlanks, QString::fromLocal8Bit("ÌÆÀÏÑ¼"), QString::fromLocal8Bit("ÕâÊÇÎÒ´ÓÒ»±¾ÊéÉÏ¿´µ½µÄÍâ¹ÛÊÇµÏÊ¿ÄáÈËÎïµÄ°æ±¾¡£Ä¿±êÊÇÈÃÌÆÀÏÑ¼Ìß½øÇòÃÅ£¬ËùÒÔÒ²ÊÇ°Ñ×î´óµÄÒ»¿éÒÆµ½µ×²¿ÖĞ¼ä¡£´Ó»­·çÀ´¿´£¬¸Ã°æ±¾²¢Ã»ÓĞµÃµ½µÏÊ¿ÄáµÄÊÚÈ¨£¬ÎÒÔÚ´ËÓÃµÄÊÇËÑË÷µ½µÄ¿É¶ÔÓ¦ÉÏµÄµÏÊ¿ÄáÈËÎïÍ¼Æ¬£¬²»¹ıÎªÁË·½±ãÃ×ÆæºÍ¸ß·É¶¼Ö»ÓĞÁ½ÖÖ¶¯×÷¡£"), "Donald", 4, 5);
+const KlotskiBoard DonaldBoard = KlotskiBoard(DonaldBlocks, DonaldBlanks, QString::fromUtf8("å”è€é¸­"), QString::fromUtf8("è¿™æ˜¯æˆ‘ä»ä¸€æœ¬ä¹¦ä¸Šçœ‹åˆ°çš„å¤–è§‚æ˜¯è¿ªå£«å°¼äººç‰©çš„ç‰ˆæœ¬ã€‚ç›®æ ‡æ˜¯è®©å”è€é¸­è¸¢è¿›çƒé—¨ï¼Œæ‰€ä»¥ä¹Ÿæ˜¯æŠŠæœ€å¤§çš„ä¸€å—ç§»åˆ°åº•éƒ¨ä¸­é—´ã€‚ä»ç”»é£æ¥çœ‹ï¼Œè¯¥ç‰ˆæœ¬å¹¶æ²¡æœ‰å¾—åˆ°è¿ªå£«å°¼çš„æˆæƒï¼Œæˆ‘åœ¨æ­¤ç”¨çš„æ˜¯æœç´¢åˆ°çš„å¯å¯¹åº”ä¸Šçš„è¿ªå£«å°¼äººç‰©å›¾ç‰‡ï¼Œä¸è¿‡ä¸ºäº†æ–¹ä¾¿ç±³å¥‡å’Œé«˜é£éƒ½åªæœ‰ä¸¤ç§åŠ¨ä½œã€‚"), "Donald", 4, 5);
 
 const QList<KlotskiBlock> TenBlocks = {
 	KlotskiBlock(2, 2, 0, 0, 0, 3, ":/NcBlocks/png/block_a.png", "Block A"),
@@ -72,7 +72,7 @@ const QList<kBlank> TenBlanks = {
 	{0, 2},
 	{1, 2}
 };
-const KlotskiBoard TenBoard = KlotskiBoard(TenBlocks, TenBlanks, QString::fromLocal8Bit("10 Block"), QString::fromLocal8Bit("ÍêÕûµÄÃèÊöÊÇ£º10 Block Puzzle by A. Filipiak¡£Ä¿±êÊÇ°Ñ×î´óµÄÁ½¿éÒ²¾ÍÊÇA¿éºÍB¿éµÄÎ»ÖÃ½»»»¡£"), "10Block", 4, 5);
+const KlotskiBoard TenBoard = KlotskiBoard(TenBlocks, TenBlanks, QString::fromUtf8("10 Block"), QString::fromUtf8("å®Œæ•´çš„æè¿°æ˜¯ï¼š10 Block Puzzle by A. Filipiakã€‚ç›®æ ‡æ˜¯æŠŠæœ€å¤§çš„ä¸¤å—ä¹Ÿå°±æ˜¯Aå—å’ŒBå—çš„ä½ç½®äº¤æ¢ã€‚"), "10Block", 4, 5);
 
 const QList<KlotskiBlock> BlockadoBlocks = {
 	KlotskiBlock(2, 2, 0, 0, 0, 4, ":/NcBlocks/png/block_a.png", "Block A"),
@@ -91,7 +91,7 @@ const QList<kBlank> BlockadoBlanks = {
 	{0, 2},
 	{1, 2}
 };
-const KlotskiBoard BlockadoBoard = KlotskiBoard(BlockadoBlocks, BlockadoBlanks, QString::fromLocal8Bit("Blockado"), QString::fromLocal8Bit("ÍêÕûµÄÃèÊöÊÇ£ºBlockado by Acme Novelty Sales¡£Ä¿±êÊÇ°Ñ×î´óµÄÒ»¿éÒÆµ½×óÏÂ½Ç¡£±È½ÏÉÙÓĞµÄ³ß´çÊÇ4¡Á6µÄÆåÅÌ¡£"), "Blockado", 4, 6);
+const KlotskiBoard BlockadoBoard = KlotskiBoard(BlockadoBlocks, BlockadoBlanks, QString::fromUtf8("Blockado"), QString::fromUtf8("å®Œæ•´çš„æè¿°æ˜¯ï¼šBlockado by Acme Novelty Salesã€‚ç›®æ ‡æ˜¯æŠŠæœ€å¤§çš„ä¸€å—ç§»åˆ°å·¦ä¸‹è§’ã€‚æ¯”è¾ƒå°‘æœ‰çš„å°ºå¯¸æ˜¯4Ã—6çš„æ£‹ç›˜ã€‚"), "Blockado", 4, 6);
 
 const QList<KlotskiBlock> PennantBlocks = {
 	KlotskiBlock(2, 2, 0, 0, 0, 3, ":/Pennant/png/pennant_chicago.png", "Chicago"),
@@ -108,6 +108,6 @@ const QList<kBlank> PennantBlanks = {
 	{2, 2},
 	{3, 2}
 };
-const KlotskiBoard PennantBoard = KlotskiBoard(PennantBlocks, PennantBlanks, QString::fromLocal8Bit("Pennant"), QString::fromLocal8Bit("ÍêÕûµÄÃèÊöÊÇ£ºPennant Puzzle by L. W. Hardy£¬ÓÖÃû£ºDad's Puzzler¡£Ä¿±êÊÇ°Ñ×î´óµÄÒ»¿éÒÆµ½×óÏÂ½Ç¡£¸ÃÃÕÌâÊ¼ÓÚ1909Äê£¬ºóÀ´³ö¹ı¶àÖÖÍâ¹ÛÑùÊ½µÄ±äÖÖ£¬ÔÚ´ËÓÃµÄÊÇ×îÔçµÄÒ»ÖÖÓ¡ÓĞÃÀ¹úµØÃûµÄ¡£"), "Pennant", 4, 5);
+const KlotskiBoard PennantBoard = KlotskiBoard(PennantBlocks, PennantBlanks, QString::fromUtf8("Pennant"), QString::fromUtf8("å®Œæ•´çš„æè¿°æ˜¯ï¼šPennant Puzzle by L. W. Hardyï¼Œåˆåï¼šDad's Puzzlerã€‚ç›®æ ‡æ˜¯æŠŠæœ€å¤§çš„ä¸€å—ç§»åˆ°å·¦ä¸‹è§’ã€‚è¯¥è°œé¢˜å§‹äº1909å¹´ï¼Œåæ¥å‡ºè¿‡å¤šç§å¤–è§‚æ ·å¼çš„å˜ç§ï¼Œåœ¨æ­¤ç”¨çš„æ˜¯æœ€æ—©çš„ä¸€ç§å°æœ‰ç¾å›½åœ°åçš„ã€‚"), "Pennant", 4, 5);
 
 const QList<KlotskiBoard> GameBoards = { HrdBoard, ShogiBoard, DonaldBoard, TenBoard, BlockadoBoard, PennantBoard };

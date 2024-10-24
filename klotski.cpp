@@ -247,7 +247,7 @@ void Klotski::AddStep(int blockId)
 	{
 		moveSteps++;
 		moveingBlock = blockId;
-		ui.statusBar->showMessage(QString::fromLocal8Bit("≤Ω ˝£∫")+QString("%1").arg(moveSteps));
+        ui.statusBar->showMessage(QString::fromUtf8("Ê≠•Êï∞Ôºö")+QString("%1").arg(moveSteps));
 		if (recordingSteps)
 		{
 			if (!stepLogFile->open(QIODevice::WriteOnly | QIODevice::Append))
@@ -292,8 +292,8 @@ void Klotski::CheckSuccess()
 	if (succeed > 0 && successable == succeed)
 	{
 		QMessageBox msgBox;
-		msgBox.setWindowTitle(QString::fromLocal8Bit("Õ∆≈ÃΩ‚√’"));
-		msgBox.setText(QString::fromLocal8Bit("Ω‚√’≥…π¶£°”√¡À") + QString("%1").arg(moveSteps) + QString::fromLocal8Bit("≤Ω°£"));
+        msgBox.setWindowTitle(QString::fromUtf8("Êé®ÁõòËß£Ë∞ú"));
+        msgBox.setText(QString::fromUtf8("Ëß£Ë∞úÊàêÂäüÔºÅÁî®‰∫Ü") + QString("%1").arg(moveSteps) + QString::fromUtf8("Ê≠•„ÄÇ"));
 		msgBox.exec();
 		isSucceeded = true;
 	}
@@ -331,7 +331,7 @@ void Klotski::ShowHelp()
 
 void Klotski::ShowAbout()
 {
-	QMessageBox::about(this, QString(), "Version 1.2\r\n2024.10.22");
+    QMessageBox::about(this, QString(), "Version 1.2.1\r\n2024.10.24");
 }
 
 void Klotski::Exit()
