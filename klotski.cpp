@@ -247,7 +247,7 @@ void Klotski::AddStep(int blockId)
 	{
 		moveSteps++;
 		moveingBlock = blockId;
-        ui.statusBar->showMessage(QString::fromUtf8("步数：")+QString("%1").arg(moveSteps));
+		ui.statusBar->showMessage(QString::fromUtf8("步数：")+QString("%1").arg(moveSteps));
 		if (recordingSteps)
 		{
 			if (!stepLogFile->open(QIODevice::WriteOnly | QIODevice::Append))
@@ -292,8 +292,8 @@ void Klotski::CheckSuccess()
 	if (succeed > 0 && successable == succeed)
 	{
 		QMessageBox msgBox;
-        msgBox.setWindowTitle(QString::fromUtf8("推盘解谜"));
-        msgBox.setText(QString::fromUtf8("解谜成功！用了") + QString("%1").arg(moveSteps) + QString::fromUtf8("步。"));
+		msgBox.setWindowTitle(QString::fromUtf8("推盘解谜"));
+		msgBox.setText(QString::fromUtf8("解谜成功！用了") + QString("%1").arg(moveSteps) + QString::fromUtf8("步。"));
 		msgBox.exec();
 		isSucceeded = true;
 	}
@@ -331,7 +331,7 @@ void Klotski::ShowHelp()
 
 void Klotski::ShowAbout()
 {
-    QMessageBox::about(this, QString(), "Version 1.2.1\r\n2024.10.24");
+	QMessageBox::about(this, QString(), "Version 1.2.1\r\n2024.10.24");
 }
 
 void Klotski::Exit()
